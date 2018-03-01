@@ -3,7 +3,7 @@
 'use strict';
 
 import fs from 'fs';
-import svgfont2js from 'svgfont2js';
+import svgfont2glyphs from 'svgfont2glyphs';
 import {sync as mkdirpSync} from 'mkdirp';
 import minimist from 'minimist';
 
@@ -30,7 +30,7 @@ function loadAliases(less) {
 
 export default function splitSVG(dir, color = '#000', verbose = false) {
   const aliases = loadAliases(fs.readFileSync(require.resolve('font-awesome/less/variables.less', 'utf8')));
-  const glyphs = svgfont2js(fs.readFileSync(require.resolve('font-awesome/fonts/fontawesome-webfont.svg', 'utf8')));
+  const glyphs = svgfont2glyphs(fs.readFileSync(require.resolve('font-awesome/fonts/fontawesome-webfont.svg', 'utf8')));
 
   mkdirpSync(dir);
 
