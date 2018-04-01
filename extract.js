@@ -26,11 +26,12 @@ function loadAliases(less) {
   return m;
 }
 
+function loadFile(path) {
+  return fs.readFileSync(require.resolve(`@fortawesome/fontawesome-free-webfonts/${path}`), 'utf8')
+}
 
-
-export default function splitSVG(dir, color = '#000', verbose = false) {
-  const aliases = loadAliases(fs.readFileSync(require.resolve('font-awesome/less/variables.less', 'utf8')));
-  const glyphs = svgfont2glyphs(fs.readFileSync(require.resolve('font-awesome/fonts/fontawesome-webfont.svg', 'utf8')));
+function extractGlyphs(path, aliases, { dir, color, verbose }) {
+  let glyphs = svgfont2glyphs(loadFile(path))
 
   mkdirpSync(dir);
 
@@ -45,6 +46,14 @@ export default function splitSVG(dir, color = '#000', verbose = false) {
       }
     }
   }
+}
+
+export default function splitSVG(dir, color = 'currentColor', verbose = false) {
+  const aliases = loadAliases(loadFile('less/_variables.less'));
+
+  extractGlyphs('webfonts/fa-regular-400.svg', aliases, { dir, color, verbose });
+  extractGlyphs('webfonts/fa-brands-400.svg', aliases, { dir: `${dir}/brands`, color, verbose });
+  extractGlyphs('webfonts/fa-solid-900.svg', aliases, { dir: `${dir}/solid`, color, verbose });
 }
 
 

@@ -1,6 +1,6 @@
-# font-awesome-svg
+# fa2svg
 
-Split [Font Awesome](http://fortawesome.github.io/Font-Awesome/) icons into
+Split [Font Awesome](https://fontawesome.com/icons) icons into
 individual SVG files.
 
 
@@ -8,7 +8,7 @@ individual SVG files.
 ## Installation
 
 ```sh
-npm install -g font-awesome-svg
+npm install -g fa2svg
 ```
 
 
@@ -25,7 +25,7 @@ fa2svg --dir OUTPUT_DIR [--color '#000' ] [--verbose]
 
 
 ```JavaScript
-var fa2svg = require('font-awesome-svg');
+var fa2svg = require('fa2svg');
 var dir = 'fa-svg';
 var color = '#fff';
 ver verbose = true;
