@@ -27,7 +27,7 @@ function loadAliases(less) {
 }
 
 function loadFile(path) {
-  return fs.readFileSync(require.resolve(`@fortawesome/fontawesome-free-webfonts/${path}`), 'utf8')
+  return fs.readFileSync(require.resolve(`@fortawesome/fontawesome-free/${path}`), 'utf8')
 }
 
 function extractGlyphs(path, aliases, { dir, color, verbose }) {
