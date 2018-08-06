@@ -1,6 +1,6 @@
 {
   "name": "fa2svg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Split Font Awesome icons into individual SVG files",
   "keywords": [
     "Font-Awesome",
@@ -30,7 +30,7 @@
   "author": "Riobard Zhan <me@riobard.com> (https://riobard.com), Justineo <justice360@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@fortawesome/fontawesome-free-webfonts": "^1.0.5",
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "minimist": "^1.1.1",
     "mkdirp": "^0.5.0",
     "svgfont2glyphs": "^0.1.4"
